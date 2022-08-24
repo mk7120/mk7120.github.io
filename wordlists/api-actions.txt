@@ -212,6 +212,8 @@ retrieve
 Retrieve
 resend
 Resend
+reject
+Reject
 run
 Run
 send
