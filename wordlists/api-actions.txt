@@ -24,6 +24,8 @@ arrange
 Arrange
 activity
 Activity
+approve
+Approve
 build
 Build
 block
