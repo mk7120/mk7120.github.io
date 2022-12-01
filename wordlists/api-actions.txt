@@ -122,6 +122,8 @@ export
 Export
 exporting
 Exporting
+execute
+Execute
 fabricate
 Fabricate
 fashion
