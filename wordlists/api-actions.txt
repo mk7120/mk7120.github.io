@@ -26,6 +26,7 @@ complete
 compose
 compute
 confirm
+consume
 consolidate
 construct
 contact
