@@ -76,6 +76,7 @@ group
 improve
 inform
 inquiry
+init
 interpret
 kill
 latest
