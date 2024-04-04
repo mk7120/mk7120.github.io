@@ -112,6 +112,7 @@ restrict
 retrieve
 resend
 reject
+revoke
 run
 send
 select
