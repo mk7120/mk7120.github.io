@@ -5,6 +5,8 @@ adapt
 add
 adjust
 admin
+aggregation
+aggregations
 alert
 annotate
 anticipate
@@ -81,6 +83,8 @@ inquiry
 init
 interpret
 kill
+headline
+headlines
 latest
 level
 link
@@ -131,6 +135,8 @@ sub
 statement
 terminate
 test
+overview
+overviews
 understand
 undo
 unqueue
