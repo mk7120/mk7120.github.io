@@ -68,7 +68,9 @@ fashion
 forge
 form
 find
+finds
 filter
+filters
 generate
 get
 go
