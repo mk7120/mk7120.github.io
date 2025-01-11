@@ -33,7 +33,7 @@
             firebase.auth().signInWithPopup(ggProvider).then(function(result) {
                 var token = result.credential.idToken;
                 var user = result.user;
-                var idToken = user.getIdToken();
+                var idToken = user.getIdToken().i;
                 console.log('User>>Goole>>>>', user);
                 console.log('User>>Idtoken>>>>', idToken);
                 userId = user.uid;
