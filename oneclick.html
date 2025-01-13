@@ -19,11 +19,20 @@
     };
     firebase.initializeApp(config);
     var database = firebase.database();
-
-    //Google singin provider
-    var ggProvider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithRedirect(ggProvider);
-
+  
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        // User is signed in, you can redirect to the main app page
+        console.log("User is already signed in:", user);
+        document.body.innerHTML = `<h1>Welcome, ${user.displayName}!</h1>`;
+      } else {
+        // User is not signed in, proceed with Google login
+        console.log("User not signed in, redirecting to Google login...");
+        const provider = new firebase.auth.GoogleAuthProvider();
+        firebase.auth().signInWithRedirect(provider);
+      }
+    });
+  
     // Handle the redirect result
     firebase.auth()
       .getRedirectResult()
